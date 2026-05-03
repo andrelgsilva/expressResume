@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const cors = require('cors');
 const { pool } = require('./config/db');
 
 const usuarioRoutes = require('./routes/usuarioRoutes');
@@ -13,6 +14,7 @@ const contatoRoutes = require('./routes/contatoRoutes');
 const idiomaRoutes = require('./routes/idiomaRoutes');
 
 const app = express();
+app.use(cors()); // ← adiciona isso
 app.use(express.json());
 
 // ROTA TESTE
